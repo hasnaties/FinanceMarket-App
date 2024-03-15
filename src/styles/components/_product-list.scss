@@ -1,0 +1,153 @@
+@use './button';
+
+#v-list {
+  display: flex;
+}
+#card-p {
+  color: #515565;
+  font-weight: 300;
+  margin: 10px 0;
+}
+
+#card-img {
+  border-radius: 10px;
+  height: 140px;
+  width: inherit;
+}
+
+#not-found {
+  align-items: center;
+  background-color: rgba(243, 244, 246, 0.7);
+  border: 1px solid $light-grey;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  height: 140px;
+}
+#not-found-text {
+  color: $light-grey;
+  font-weight: 400;
+  font-size: 8pt;
+}
+
+// classes
+.right-side {
+  display: flex;
+  flex-direction: column;
+  margin-left: 272px;
+}
+.div-item {
+  background-color: $white;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 15px;
+  width: 325px;
+  flex-shrink: 0;
+}
+
+.div-item-text {
+  margin: 15px 15px;
+  font-weight: 300;
+  font-size: 12pt;
+}
+
+.heading-second {
+  color: $text-grey;
+}
+
+.single-pair {
+  margin-right: 30px;
+}
+
+.double-pair {
+  display: flex;
+  flex-direction: row;
+  margin-top: 15px;
+}
+
+.ratepa {
+  margin-left: 12px;
+}
+
+// buttons
+
+.div-btn {
+  margin-top: -12px;
+  padding: 10px;
+  margin-left: 5px;
+}
+
+.btn-blue {
+  @include button.btn();
+  background-color: $blue-color;
+  box-shadow: 0 0 5px rgba(84, 86, 207, 0.7);
+}
+.btn-white {
+  @include button.btn();
+  border: 1px solid $light-grey;
+  background-color: $white;
+  color: $text-grey;
+  margin-left: 10px;
+  padding: 9px 15px;
+}
+
+.blank-space {
+  margin-top: 20px;
+}
+
+// Nav Address
+.nav-address {
+  display: flex;
+  margin: 10px 0;
+  align-items: center;
+}
+
+@mixin icons-address {
+  height: 16px;
+  width: 16px;
+  margin-left: 15px;
+}
+#icon-address-home {
+  @include icons-address;
+}
+#icon-address-gt {
+  @include icons-address;
+  height: 10px;
+  width: 10px;
+}
+#address-name {
+  font-size: small;
+  margin-left: 15px;
+  color: $second-grey;
+  font-weight: 500;
+}
+
+// Menu Heading
+#menu-heading {
+  margin: 5px;
+  margin-left: 15px;
+}
+
+// media - Responsive
+@media screen and (max-width: 680px) {
+  #v-list {
+    margin-left: 20px;
+    flex-direction: column;
+  }
+
+  .right-side {
+    margin-left: 0px;
+  }
+
+  .nav-address {
+    margin-left: 10px;
+  }
+  .div-item {
+    margin-left: 0px;
+  }
+
+  #menu-heading {
+    margin-left: 20px;
+    margin-top: 30px;
+  }
+}

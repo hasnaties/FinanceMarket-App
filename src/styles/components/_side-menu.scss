@@ -1,0 +1,182 @@
+@use './icon';
+
+//classes
+.side-menu {
+  background-color: $white;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: fixed;
+  transition: margin-left 0.3s ease;
+  top: 0px;
+  width: 260px;
+}
+
+.nav-menu {
+  margin: 20px 0;
+  margin-left: 15px;
+}
+
+.nav-pair {
+  align-items: center;
+  border-radius: 5px;
+  display: flex;
+  padding: 5px 5px;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #eeeefa;
+  }
+  &:hover > #bar-nav-text {
+    color: $blue-color;
+  }
+}
+// id
+#title-div {
+  color: $heading-color;
+  text-align: center;
+  width: inherit;
+  letter-spacing: 1px;
+}
+#title-heading {
+  margin: 15px;
+}
+
+#bar-nav-text {
+  color: #515565;
+  font-weight: 500;
+  margin-left: 15px;
+}
+
+#icon-img {
+  @include icon.icons();
+}
+
+#div-nav-second {
+  margin-top: 120px;
+}
+
+#count {
+  background-color: $blue-color;
+  border-radius: 20px;
+  margin-left: 20px;
+  padding: 5px 10px;
+}
+
+#count-text {
+  font-family: inherit;
+  color: $white;
+  font-weight: 500;
+}
+
+hr {
+  background-color: $light-grey;
+  margin: 0px 5px;
+}
+
+#profile {
+  display: flex;
+  flex-direction: row;
+  margin: 20px 25px 10px 30px;
+}
+#dp {
+  background-color: $blue-color;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  padding: 10px 10px;
+  width: 40px;
+  height: 40px;
+}
+
+#dp-text {
+  color: $white;
+  font-family: inherit;
+  font-weight: 300;
+  font-size: large;
+}
+
+#profile-text-details {
+  color: $heading-color;
+  font-family: inherit;
+  margin-left: 10px;
+}
+
+#profile-name {
+  font-weight: 500;
+}
+#profile-title {
+  margin-top: 5px;
+  font-weight: 400;
+  color: $new-grey;
+}
+
+#icon-menu {
+  @include icon.icons();
+  margin-top: 10px;
+  margin-left: 30px;
+  cursor: pointer;
+}
+
+#drop-down {
+  border: 1px solid $light-grey;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: $white;
+  cursor: pointer;
+  display: none;
+  padding: 10px;
+  position: absolute;
+  margin-top: 45px;
+  margin-left: 90px;
+  width: 130px;
+  z-index: 2;
+}
+#icon-img-logout {
+  margin-left: 5px;
+  height: 18px;
+  width: 18px;
+}
+#text-logout {
+  margin-left: 10px;
+}
+
+#last-login {
+  color: $new-grey;
+  font-weight: 500;
+  font-size: 10pt;
+  font-family: inherit;
+  margin-left: 30px;
+}
+
+.menu-toggle {
+  background-color: rgba(84, 86, 207, 0.5);
+  display: none;
+  cursor: pointer;
+  padding: 10px;
+  position: fixed;
+  z-index: 1;
+  right: 0;
+  top: 15px;
+}
+#ham-menu {
+  margin: 5px;
+  height: 28px;
+  width: 28px;
+}
+
+@media screen and (max-width: 680px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .side-menu {
+    display: none;
+    height: 90%;
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+  }
+}

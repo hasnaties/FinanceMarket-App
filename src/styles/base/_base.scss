@@ -1,0 +1,20 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $bg-grey;
+  font-family: 'Roboto', sans-serif;
+}
+
+h3 {
+  color: $heading-color;
+  font-size: 14pt;
+}
+
+h6 {
+  color: $heading-color;
+  font-size: 12pt;
+}

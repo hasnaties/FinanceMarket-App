@@ -1,0 +1,14 @@
+@mixin btn {
+  appearance: button;
+  color: #fff;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 11px;
+  cursor: pointer;
+  font-size: 10pt;
+  font-weight: 450;
+  font-family: inherit;
+  &:focus {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  }
+}

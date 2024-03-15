@@ -1,0 +1,111 @@
+// classes
+.div-h-item {
+  background-color: $white;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  height: 320px;
+  width: 380px;
+  box-sizing: border-box;
+}
+
+.div-item-h-text {
+  padding: 5px;
+  margin: 10px;
+  margin-bottom: 0;
+}
+
+#h-list {
+  display: flex;
+  margin-left: 5px;
+  overflow: hidden;
+}
+
+#menu-heading-second {
+  margin-left: 15px;
+  padding: 5px;
+}
+
+#h-img {
+  border-radius: 10px;
+  height: 140px;
+  width: inherit;
+}
+
+#h-heading {
+  color: $heading-color;
+  font-weight: 500;
+}
+
+#h-card-p {
+  color: #515565;
+  font-weight: 300;
+  margin: 10px 0;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+}
+
+// buttons
+.div-h-btn {
+  padding: 5px;
+  margin-left: 10px;
+}
+
+.btn-h-white {
+  border: 1px solid $light-grey;
+  background-color: $white;
+  color: $text-grey;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 12pt;
+  font-weight: 400;
+  font-family: inherit;
+  padding: 10px 20px;
+
+  &:focus {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  }
+}
+
+#div-scroll {
+  background-color: white;
+  border-radius: 50px;
+  cursor: pointer;
+  position: relative;
+  padding: 10px;
+  height: 50px;
+  right: 270px;
+  top: 125px;
+  width: 50px;
+  z-index: 2;
+}
+#icon-scroll {
+  height: 24px;
+  margin: 5px;
+  width: 24px;
+}
+
+@media screen and (max-width: 680px) {
+  #div-scroll {
+    display: none;
+  }
+
+  .div-h-item {
+    height: 300px;
+    width: 370px;
+  }
+  #h-list {
+    margin-left: -8px;
+    flex-direction: column;
+  }
+  #menu-heading-second {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 15px;
+  }
+  #menu-hea ding-second-text {
+    font-size: 16pt;
+  }
+}
