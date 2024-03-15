@@ -1,7 +1,7 @@
 import BlogItem from './BlogItem';
 import rightArrowIcon from '../../images/icons/right-arrow.png';
 import { useEffect, useState } from 'react';
-import { getBlogs } from '../API_Requests/blog';
+import { getBlogs } from '../API_Request/blogReq';
 
 const BlogList = () => {
   const [blogs, setBlogs] = useState([]);
@@ -10,7 +10,7 @@ const BlogList = () => {
     getBlogs().then((res) => {
       setBlogs(res.data);
     });
-  }, [blogs]);
+  }, []);
 
   return (
     <>
