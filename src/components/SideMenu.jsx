@@ -1,13 +1,10 @@
 import NavPair from "./NavPair";
-import NavPairNotification from "./NavPairNotification";
 
 //Icons
 import hamBurgerIcon from "../../images/icons/hamburger-menu.png";
 import homeIcon from "../../images/icons/home.png";
 import barsIcon from "../../images/icons/bars.png";
 import paperIcon from "../../images/icons/paper.png";
-import notificationIcon from "../../images/icons/notification.png";
-import settingsIcon from "../../images/icons/settings.png";
 import ProfileDetails from "./ProfileDetails";
 
 const SideMenu = ({ toggleStyle, handleToggle }) => {
@@ -46,14 +43,11 @@ const SideMenu = ({ toggleStyle, handleToggle }) => {
           <NavPair imageSrc={paperIcon} navTitle={"My Applications"} />
 
           {/* Remaining Nav */}
-          <div id="div-nav-second">
-            <NavPairNotification imageSrc={notificationIcon} navTitle={"Notifications"} />
-            <NavPair imageSrc={settingsIcon} navTitle={"Settings"} />
-          </div>
+
         </div>
 
 
-        <hr />
+
 
         {/* Profile and Details */}
         <ProfileDetails />

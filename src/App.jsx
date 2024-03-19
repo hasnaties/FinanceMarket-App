@@ -1,55 +1,58 @@
-import { useEffect, useState } from 'react';
-import RightSide from './components/RightSide';
-import SideMenu from './components/SideMenu';
+// import { useEffect, useState } from 'react';
+// import RightSide from './components/RightSide';
+// import SideMenu from './components/SideMenu';
+// import LoginPage from './components/LoginPage';
+import ApplyProduct from './components/ApplyProduct';
 import './styles/styles.scss';
 
 function App() {
-  const [toggleLeftStyle, setToggleLeftStyle] = useState({ display: '' });
-  const [toggleRightStyle, setToggleRightStyle] = useState({ display: '' });
+  // const [toggleLeftStyle, setToggleLeftStyle] = useState({ display: '' });
+  // const [toggleRightStyle, setToggleRightStyle] = useState({ display: '' });
 
-  const [innerWidth, setInnerWidth] = useState(window.innerWidth);
+  // const [innerWidth, setInnerWidth] = useState(window.innerWidth);
 
 
   //handling toggle click
-  const handleToggle = () => {
-    if (toggleLeftStyle.display === 'none' || toggleLeftStyle.display === '') {
-      setToggleLeftStyle({ display: 'flex' });
-      setToggleRightStyle({ display: 'none' });
+  // const handleToggle = () => {
+  //   if (toggleLeftStyle.display === 'none' || toggleLeftStyle.display === '') {
+  //     setToggleLeftStyle({ display: 'flex' });
+  //     setToggleRightStyle({ display: 'none' });
 
-    } else if (toggleRightStyle.display == 'none' || toggleRightStyle === '') {
-      setToggleRightStyle({ display: 'block' });
-      setToggleLeftStyle({ display: 'none' });
-    }
-  }
+  //   } else if (toggleRightStyle.display == 'none' || toggleRightStyle === '') {
+  //     setToggleRightStyle({ display: 'block' });
+  //     setToggleLeftStyle({ display: 'none' });
+  //   }
+  // }
 
   //listening for size change
-  useEffect(() => {
+  // useEffect(() => {
 
-    const handleResize = () => {
-      setInnerWidth(window.innerWidth);
-    }
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize)
-  }, [])
+  //   const handleResize = () => {
+  //     setInnerWidth(window.innerWidth);
+  //   }
+  //   window.addEventListener('resize', handleResize);
+  //   return () => window.removeEventListener('resize', handleResize)
+  // }, [])
 
-  //Default
-  useEffect(() => {
-    if (innerWidth > 680) {
-      setToggleLeftStyle({ display: 'flex' });
-      setToggleRightStyle({ display: 'block' });
-    } else {
-      setToggleRightStyle({ display: 'block' });
-      setToggleLeftStyle({ display: 'none' });
-    }
-  }, [innerWidth]);
+  // //Default
+  // useEffect(() => {
+  //   if (innerWidth > 680) {
+  //     setToggleLeftStyle({ display: 'flex' });
+  //     setToggleRightStyle({ display: 'block' });
+  //   } else {
+  //     setToggleRightStyle({ display: 'block' });
+  //     setToggleLeftStyle({ display: 'none' });
+  //   }
+  // }, [innerWidth]);
 
 
 
 
   return (
     <>
-      <SideMenu toggleStyle={toggleLeftStyle} handleToggle={handleToggle} />
-      <RightSide toggleStyle={toggleRightStyle} />
+      <ApplyProduct />
+      {/* <SideMenu toggleStyle={toggleLeftStyle} handleToggle={handleToggle} />
+      <RightSide toggleStyle={toggleRightStyle} /> */}
     </>
   )
 }

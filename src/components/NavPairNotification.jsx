@@ -1,4 +1,4 @@
-const NavPairNotification = ({ imageSrc, navTitle }) => {
+const NavPairNotification = ({ imageSrc, navTitle, notification }) => {
   return (
     <>
       <div className="nav-pair">
@@ -6,7 +6,7 @@ const NavPairNotification = ({ imageSrc, navTitle }) => {
         <p id="bar-nav-text">{navTitle}</p>
 
         <div id="count">
-          <p id="count-text">03</p>
+          <p id="count-text">{notification.length}</p>
         </div>
       </div>
     </>

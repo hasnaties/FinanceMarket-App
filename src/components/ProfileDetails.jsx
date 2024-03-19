@@ -3,13 +3,15 @@ import menuIcon from "../../images/icons/menu.png";
 import logoutIcon from "../../images/icons/logout.png";
 
 import { requestGetProfile, requestUpdateLastActive } from '../API_Request/profileReq';
-import { setInitials } from '../utils/utilProfile';
+import { lastActiveString, setInitials } from '../utils/utilProfile';
+import NavSecond from './NavSecond';
 
 const profileDefault = {
   fullName: "User",
   profileType: "User",
-  lastActive: "1m",
-  initials: "U"
+  lastActive: Date.now(),
+  initials: "U",
+  notification: []
 }
 
 const ProfileDetails = () => {
@@ -33,7 +35,6 @@ const ProfileDetails = () => {
 
   useEffect(() => {
     requestGetProfile().then((res) => {
-
       res.data.initials = setInitials(res.data.fullName);
       setProfile(res.data);
     }).catch((err) => {
@@ -43,31 +44,37 @@ const ProfileDetails = () => {
   }, [])
 
   return (
-    <div>
-      <div id="profile">
+    <>
+      <NavSecond notification={profile.notification} />
 
-        <div id="dp">
-          <p id="dp-text">{profile.initials}</p>
-        </div>
+      <hr />
 
-        <div id="profile-text-details">
-          <p id="profile-name">{profile.fullName}</p>
-          <p id="profile-title">{profile.profileType}</p>
-        </div>
+      <div>
+        <div id="profile">
 
-        {/* Drop down button */}
-        <div id="btn-dropdown" onClick={dropdown}>
-          <img id="icon-menu" src={menuIcon} alt="menu" />
-        </div>
+          <div id="dp">
+            <p id="dp-text">{profile.initials}</p>
+          </div>
 
-        {/* Drop down Menu */}
-        <div id="drop-down" style={dropdownStyle} onClick={handleLogout}>
-          <img id="icon-img-logout" src={logoutIcon} alt="logout" />
-          <p id="text-logout">Log out</p>
+          <div id="profile-text-details">
+            <p id="profile-name">{profile.fullName}</p>
+            <p id="profile-title">{profile.profileType}</p>
+          </div>
+
+          {/* Drop down button */}
+          <div id="btn-dropdown" onClick={dropdown}>
+            <img id="icon-menu" src={menuIcon} alt="menu" />
+          </div>
+
+          {/* Drop down Menu */}
+          <div id="drop-down" style={dropdownStyle} onClick={handleLogout}>
+            <img id="icon-img-logout" src={logoutIcon} alt="logout" />
+            <p id="text-logout">Log out</p>
+          </div>
         </div>
+        <p id="last-login">{lastActiveString(profile.lastActive)}</p>
       </div>
-      <p id="last-login">Last Login 1m ago.</p>
-    </div>
+    </>
   )
 }
 

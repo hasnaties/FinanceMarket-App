@@ -1,0 +1,39 @@
+@use './button';
+
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  #login-div {
+    align-items: center;
+    background-color: $white;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 50px;
+    width: 360px;
+    padding: 5px;
+  }
+  p {
+    color: red;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+
+    input {
+      margin: 5px;
+      padding: 5px;
+    }
+
+    button {
+      @include button.btn();
+      background-color: $blue-color;
+      box-shadow: 0 0 5px rgba(84, 86, 207, 0.7);
+      margin: 10px;
+    }
+  }
+}

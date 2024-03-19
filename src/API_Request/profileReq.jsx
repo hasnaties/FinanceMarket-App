@@ -2,8 +2,6 @@ import axios from "axios"
 import Cookies from 'js-cookie';
 
 const url = import.meta.env.VITE_BASE_URL;
-const axiosAuth = axios.create();
-axiosAuth.defaults.headers.common['Authorization'] = Cookies.get("auth_token");
 
 export const requestGetProfile = () => {
   return (
@@ -17,6 +15,15 @@ export const requestLogin = (email, password) => {
     axios.post(`${url}/login`, payload)
   );
 }
+
+/*
+custom axios instance for
+secure endpoints to contain token
+*/
+
+const axiosAuth = axios.create();
+axiosAuth.defaults.headers.common['Authorization'] = Cookies.get("auth_token");
+
 
 export const requestUpdateLastActive = () => {
   return (
