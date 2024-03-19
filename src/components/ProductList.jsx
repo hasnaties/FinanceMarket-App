@@ -1,6 +1,6 @@
 import ProductItem from "./ProductItem";
 import { useEffect, useState } from "react";
-import { getProducts } from "../API_Requests/product";
+import { getProducts } from "../API_Request/productReq";
 
 
 const ProductList = () => {
@@ -10,7 +10,7 @@ const ProductList = () => {
     getProducts().then((res) => {
       setProducts(res.data);
     });
-  }, [products]);
+  }, []);
 
   return (
     <>
