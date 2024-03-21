@@ -2,12 +2,19 @@
 
 These are the functionalities currently implemented in the app.
 
+### Apply Product
+
+- Form
+- Extra details
+- Review Form (pending)
+
 ### Profile
 
 - Authenticating the login.
 - Fetching Profile details.
 - Updating last active status.
 - Dynamic Initials
+- Dynamic last active
 
 ### Products
 

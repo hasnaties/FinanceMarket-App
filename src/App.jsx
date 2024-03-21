@@ -4,6 +4,7 @@
 // import LoginPage from './components/LoginPage';
 import ApplyProduct from './components/ApplyProduct';
 import './styles/styles.scss';
+import "react-datepicker/dist/react-datepicker.css";
 
 function App() {
   // const [toggleLeftStyle, setToggleLeftStyle] = useState({ display: '' });

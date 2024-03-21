@@ -1,0 +1,73 @@
+@use './button';
+
+@mixin box-base {
+  background-color: $white;
+  border-radius: 10px;
+  margin-left: 15px;
+  padding: 20px 15px;
+}
+
+#extra {
+  padding: 10px;
+
+  p,
+  li {
+    color: $phase-grey;
+    font-size: 10pt;
+    font-weight: 500;
+  }
+
+  #first-box {
+    @include box-base();
+    h4 {
+      color: $phase-blue;
+    }
+
+    #product-details {
+      display: flex;
+
+      #pair-row {
+        display: flex;
+        flex-direction: column;
+        margin-top: 15px;
+
+        #second-row {
+          margin-top: 10px;
+        }
+      }
+
+      .pair-second {
+        margin-left: 100px;
+      }
+    }
+  }
+
+  #second-box {
+    @include box-base();
+    margin-top: 20px;
+
+    button {
+      @include button.btn();
+      background-color: $white;
+      border: 1px solid $blue-color;
+      color: $blue-color;
+      padding: 10px 20px;
+    }
+
+    p {
+      margin-top: 100px;
+    }
+
+    h5 {
+      font-size: 14pt;
+    }
+
+    ul {
+      margin-left: 40px;
+
+      li {
+        margin-top: 8px;
+      }
+    }
+  }
+}

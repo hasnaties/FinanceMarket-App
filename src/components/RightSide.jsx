@@ -1,7 +1,3 @@
-import BlogList from "./BlogList";
-import LocationPath from "./LocationPath";
-import ProductList from "./ProductList";
-
 const RightSide = ({ toggleStyle }) => {
 
   return (
@@ -10,9 +6,7 @@ const RightSide = ({ toggleStyle }) => {
       className="right-side"
       style={toggleStyle}
     >
-      <LocationPath />
-      <ProductList />
-      <BlogList />
+
     </div>
   );
 }
